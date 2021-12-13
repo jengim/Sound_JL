@@ -206,12 +206,16 @@
  
 
 
-
+let audioON = false;
 document.addEventListener("click", function(){
-    oscillator1.start();
-    oscillator2.start();
+    if (!audioON) {
+        constantNode.start();
+        oscillator1.start();
+        oscillator2.start();
+        audioOn = true;
+    }
     
-    )}
+ )}
     
     
     //DOM
