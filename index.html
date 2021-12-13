@@ -195,7 +195,7 @@
 
     let audioCtx= new(window.AudioContext || window.webkitAudioContext)();
     let oscillator1 = audioCtx.createOscillator();
-    oscillator1.type = "ssquare";
+    oscillator1.type = "square";
     oscillator1.frequency.value = 395.16; //F2
     oscillator1.connect(audioCtx.destination);
 
@@ -206,6 +206,15 @@
  
 
 
+let audioON = false;
+document.addEventListener("click", function(){
+    if (!audioON) {
+        oscillator1.start();
+        oscillator2.start();
+        audioOn = true;
+    }
+    
+ })
     
     
     //DOM
