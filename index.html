@@ -53,8 +53,6 @@
 
 <script>
 
-var startupSound = new Audio("sounds/startMusic.mp3");
-
     //CODE
 
     let twrk = {};
@@ -200,13 +198,21 @@ var startupSound = new Audio("sounds/startMusic.mp3");
     oscillator1.type = "ssquare";
     oscillator1.frequency.value = 395.16; //F2
     oscillator1.connect(audioCtx.destination);
-    oscillator1.start();
 
     let oscillator2 = audioCtx.createOscillator();
     oscillator2.type = "square";
     oscillator2.frequency.value = 263.74; //C3
     oscillator2.connect(audioCtx.destination);
+ 
+
+
+
+document.addEventListener("click", function(){
+    oscillator1.start();
     oscillator2.start();
+    
+    )}
+    
     
     //DOM
 
